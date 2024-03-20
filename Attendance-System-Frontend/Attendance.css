@@ -32,16 +32,21 @@ body {
 
 input[type=text] {
   position: absolute;
-  left: 250px;
+  left: 220px;
 }
 
 label {
   position: absolute;
-  left: 50px;
+  left: 100px;
+  font-weight: bold;
 }
 
-.submit {
+input[type="submit"] {
   position: relative;
   left: 200px;
+  top: 25px;
+  width: 118px;
+  height: 43px;
+  border-radius: 12px;
 }
 
