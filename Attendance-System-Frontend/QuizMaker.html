@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz for Professor</title>
+</head>
+<body>
+<h1>Quiz Editor</h1>
+<form id="quizEditorForm">
+  <div>
+    <label for="question1">Question 1:</label>
+    <input type="text" id="question1" name="question1" placeholder="Enter question 1">
+    <br>
+    <label for="q1a">Answer choices:</label><br>
+    <input type="text" id="q1a" name="q1a" placeholder="Option a">
+    <input type="text" id="q1b" name="q1b" placeholder="Option b">
+    <input type="text" id="q1c" name="q1c" placeholder="Option c">
+  </div>
+  <div>
+    <label for="question2">Question 2:</label>
+    <input type="text" id="question2" name="question2" placeholder="Enter question 2">
+    <br>
+    <label for="q2a">Answer choices:</label><br>
+    <input type="text" id="q2a" name="q2a" placeholder="Option a">
+    <input type="text" id="q2b" name="q2b" placeholder="Option b">
+    <input type="text" id="q2c" name="q2c" placeholder="Option c">
+  </div>
+  <div>
+    <label for="question3">Question 3:</label>
+    <input type="text" id="question3" name="question3" placeholder="Enter question 3">
+    <br>
+    <label for="q3a">Answer choices:</label><br>
+    <input type="text" id="q3a" name="q3a" placeholder="Option a">
+    <input type="text" id="q3b" name="q3b" placeholder="Option b">
+    <input type="text" id="q3c" name="q3c" placeholder="Option c">
+  </div>
+  <button type="button" onclick="saveQuiz()">Save Quiz</button>
+</form>
+
+<script>
+// Backend code to send quiz data to the server would go here
+
+function saveQuiz() {
+  var quizData = {};
+  quizData.question1 = {
+    a: document.getElementById('q1a').value,
+    b: document.getElementById('q1b').value,
+    c: document.getElementById('q1c').value
+  };
+  
+  quizData.question2 = {
+    a: document.getElementById('q2a').value,
+    b: document.getElementById('q2b').value,
+    c: document.getElementById('q2c').value
+  };
+  
+  quizData.question3 = {
+    a: document.getElementById('q3a').value,
+    b: document.getElementById('q3b').value,
+    c: document.getElementById('q3c').value
+  };
+  
+  // Backend code to send quizData to the server would go here
+  
+}
+</script>
+</body>
+</html>

@@ -3,18 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Student Quiz</title>
     <link rel="stylesheet" href="Attendance.css"> 
 </head>
 <body>
     <div class = "banner">
         <img src = "Images/UT Dallas Logo.png" alt = "UT Dallas logo">
     </div>
-    <div class = "input_area">
-        <label for="Name">Name:</label>
-        <input type="text" id="Name" name="Name"><br><br>
-        <div id="quiz"></div>
-        <button id="submit">Submit Quiz</button>
-    </div>
-</body>
+    <div id="quizQuestions">
+        <!-- Backend code to fetch quiz data would go here -->
+        <!-- Quiz questions inserted here -->
+      </div>
+      <button type="button" onclick="submitQuiz()">Submit</button>
+      
+      <script>
+      // Backend to fetch quiz data
+      
+      //populates quiz questions from backend data
+      function populateQuizQuestions(quizData) {
+        var quizHTML = '';
+        Object.keys(quizData).forEach(function(question) {
+          quizHTML += '<div>';
+          quizHTML += '<p>' + question + '</p>';
+          quizHTML += '<input type="radio" name="' + question + '" value="a"> ' + quizData[question].a + '<br>';
+          quizHTML += '<input type="radio" name="' + question + '" value="b"> ' + quizData[question].b + '<br>';
+          quizHTML += '<input type="radio" name="' + question + '" value="c"> ' + quizData[question].c + '<br>';
+          quizHTML += '</div>';
+        });
+        document.getElementById('quizQuestions').innerHTML = quizHTML;
+      }
+      
+      function submitQuiz() {
+        var answers = {};
+        var questions = document.querySelectorAll('input[type="radio"]');
+        questions.forEach(function(question) {
+          if (question.checked) {
+            answers[question.name] = question.value;
+          }
+        });
+        console.log(answers); // Backend code to send answers to the server would go here
+      }
+      
+      // Backend code to fetch quiz data from the server would go here
+      </script>
+      </body>
 </html>
