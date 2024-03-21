@@ -15,14 +15,29 @@ body {
   height: 75px;
 }
 
-.input_area {
+.input_area_login, .input_area_success {
   background-color: white;
   position: relative;
   z-index: 1;
-  width: 500px;
-  height: 500px;
   margin: 0 auto;
   top: 50px;
+}
+
+.input_area_login {
+  width: 500px;
+  height: 500px;
+}
+
+.input_area_success {
+  width: 500px;
+  height: 100px;
+  font-weight: bold;
+}
+
+.input_area_success h1 {
+  position: absolute;
+  top: 10px;
+  left: 80px;
 }
 
 .input_area_form {
@@ -32,21 +47,31 @@ body {
 
 input[type=text] {
   position: absolute;
-  left: 220px;
+  left: 230px;
+  width: 200px;
+  border-width: medium;
+  border-style: solid;
+  border-color: black;
 }
 
 label {
   position: absolute;
-  left: 100px;
+  left: 80px;
   font-weight: bold;
+  font-size: 20px;
 }
 
 input[type="submit"] {
   position: relative;
-  left: 200px;
+  left: 190px;
   top: 25px;
   width: 118px;
   height: 43px;
   border-radius: 12px;
+  border: 0;
+  background-color: #124734;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
 }
 
